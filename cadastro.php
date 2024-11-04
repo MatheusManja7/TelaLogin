@@ -10,27 +10,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <h2>Cadastro de Usuario</h2><br>
-    <form action="" method="post">
-        <label>Nome</label><br>
-        <input type="text" name="nome" id="" placehpuder="Nome Completo"><br><br>
+    <div class="box-principal">
+        <h2>Cadastro</h2>
+        <form action="" method="post">
+            <label>Nome</label><br>
+            <input type="text" name="nome" id="" placeholder="Nome Completo"><br><br><br>
 
-        <label>Email</label><br>
-        <input type="email" name="email" id="" placehpuder="Digite o Email"><br><br>
+            <label>Email</label><br>
+            <input type="email" name="email" id="" placeholder="Digite o Email"><br><br><br>
 
-        <label>Telefone</label><br>
-        <input type="tel" name="telefone" id="" placehpuder="Telefone Completo"><br><br>
+            <label>Telefone</label><br>
+            <input type="tel" name="telefone" id="" placeholder="Telefone Completo"><br><br><br>
 
-        <label>Senha</label><br>
-        <input type="password" name="senha" id="" placehpuder="Digite sua Senha"><br><br>
+            <label>Senha</label><br>
+            <input type="password" name="senha" id="" placeholder="Digite sua Senha"><br><br><br>
 
-        <label>Confirmar Senha</label><br>
-        <input type="password" name="confSenha" id="" placehpuder="Confirme a sua Senha"><br><br>
+            <label>Confirmar Senha</label><br>
+            <input type="password" name="confSenha" id="" placeholder="Confirme a sua Senha"><br><br><br>
 
-        <input type="submit" value="CADASTRAR">
-    </form>
+            
+            <input class="b" type="submit" value="CADASTRAR">
+        </form>
+    </div>
+
+    
 
     <?php
         if(isset($_POST['nome']))
@@ -44,7 +50,7 @@
             if(!empty($nome) && !empty($email) && !empty($telefone) && !empty($senha) && !empty($confSenha))
             {
                 $usuario->conectar("cadastrousuarioturma33","localhost","root", "");
-                if($usuario->msgError == "")
+                if($usuario->msgErro == "")
                 {
                     if($senha == $confSenha)
                     {
@@ -58,13 +64,44 @@
                                 </div>
                             <?php
                         }
+                        else
+                        {
+                            ?>
+                                <div class="msg-erro">
+                                    <p>Email já Cadastrado</p>
+                                </div>
+                            <?php
+                        }
+                    }
+                    else
+                    {
+                        ?>
+                            <div class="msg-erro">
+                                <p>Senha e Confirmar senha não Conferem.</p>
+                            </div>
+                        <?php
                     }
                 }
                 else
                 {
-                    echo "Tente outra Vez".$usuario->msgError;
+                    ?>
+
+                        <div class="msg-erro">
+                            <?php echo "Erro: ".$usuario->msgErro;?>
+                        </div>
+
+                    <?php
                 }
             }
+            else
+            {
+                ?>
+                    <div class="msg-erro">
+                        <p>Preencha todos os campos.</p>
+                    </div>
+                <?php
+            }
+
         }
     ?>
 
