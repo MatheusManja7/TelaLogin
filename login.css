@@ -11,3 +11,60 @@ section{
     justify-content: center;
 }
 
+.box-login{
+    width: 1200px;
+    height: 700px;
+    margin-top: 150px;
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 30px aquamarine;
+    
+}
+
+.div{
+    width: 500px;
+    height: 700px;
+    background-color: blue;
+    flex: 1;
+}
+
+form{
+    width: 400px;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+.area-form{
+    width: 500px;
+    height: 700px;
+    background-color: rgba(137, 43, 226, 0);
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid aquamarine;
+}
+
+.area-form h1{
+    position: relative;
+    bottom: 220px;
+    font-size: 40px;
+    color: rgb(44, 121, 95);
+    left: 200px;
+}
+
+label{
+    margin-left: 50px;
+    bottom: 10px;
+}
+
+input{
+    width: 300px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 15px;
+    margin-left: 50px;
+    border: 2px solid rgb(27, 124, 92);
+}

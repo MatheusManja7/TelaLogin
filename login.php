@@ -14,9 +14,10 @@
 </head>
 <body>
     <section>
-        <div class="box-ligin">
+        <div class="box-login">
             <div class="div"></div>
             <div class="area-form">
+                <h1>Login</h1>
                 <form method="post">
                     <label>Usuario</label><br>
                     <input type="email" name="email" id="" placeholder="Digite seu email."><br><br>
