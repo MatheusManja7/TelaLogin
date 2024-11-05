@@ -9,13 +9,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login2.css">
     <title>Tela Login</title>
 </head>
 <body>
     <section>
+    <div class="bolota1"></div>
+    <div class="bolota2"></div>
+    <div class="bolota3"></div> 
         <div class="box-login">
-            <div class="div"></div>
+            <div class="div">
+                <div class="area-img">
+                    <img src="" alt="">
+                </div>
+            </div>
             <div class="area-form">
                 <h1>Login</h1>
                 <form method="post">
@@ -24,8 +31,8 @@
                     <label>Senha</label><br>
                     <input type="password" name="senha" id="" placeholder="***********"><br><br>
 
-                    <input type="submit" value="Logar"><br>
-                    <a href="cadastro.php">INSCREVA-SE</a>
+                    <button class="b2">Logar</button>
+                    <p class="p1">Não Possui Conta <a href="cadastro.php">Cadastre-se</a></p>
                 </form>
             </div>
            
