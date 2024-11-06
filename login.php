@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login2.css">
+    <link rel="stylesheet" href="login1.css">
     <title>Tela Login</title>
 </head>
 <body>
