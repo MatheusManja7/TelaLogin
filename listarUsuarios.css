@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,80 +8,75 @@
     overflow: hidden;
 }
 
-section{
+section {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-
-.conteiner{
-    width: 2000px;
-    height: 1000px;
-    margin: 0px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(69, 149, 240, 0);
-
+.conteiner {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
 }
 
-.conteiner h1{
-    width: 600px;
-    position: relative;
-    bottom: 350px;
-    left: 600px;
-    font-size: 40px;
+.conteiner h2 {
+    font-size: 32px;
     color: #5fcae2;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
-    position: relative;
-    right: 300px;
-    bottom: 140px;
-    
+    margin-top: 20px;
 }
 
-th, td{
-    border: 1px solid;
+th, td {
     padding: 10px;
     text-align: left;
-    border-radius: 0px;
-    border: none;
 }
 
-
-th{
+th {
     background-color: #5fcae2;
-    color: #333;
+    color: #fff;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
     background-color: white;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: rgba(234, 234, 234, 0.758);
 }
 
-button{
-    width: 200px;
+button {
+    width: 100px;
     height: 35px;
     border: none;
     border-radius: 20px;
-   margin-bottom: 850px;
-   background-color: #5fcae2;
-   color: white;
-   font-size: 16px;
-   font-weight: 600;
-   transform:  transform 2.0s ease;
-   position: relative;
-   left: 30px;
+    background-color: #5fcae2;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.1);
 }
 
+td button {
+    width: 100px; /* Ajuste no tamanho do botão */
+    margin: 0;
+    padding: 5px;
+}
+
+.excluir{
+    background-color: red;
+}

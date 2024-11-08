@@ -1,45 +1,59 @@
+<?php 
+    require_once 'usuario.php';
+    $usuario = new Usuario();
+    $usuario->conectar("cadastrousuarioturma33","localhost","root", "");
+    $dados = $usuario->listarUsuarios();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="ListarUsuarios.css">
+   
+    <title>Listar Dados</title>
 </head>
-<style>
-    button{
-        width: 200px;
-        height: 35px;
-        border: none;
-        border-radius: 10px;
-        background-color: #5fcae2;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        transform:  transform 2.0s ease;
-        margin-left: 20px;
-    }
-    button:hover{
-        transform: scale(1.1);
-    }
-
-    .bb{
-    width: 200px;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-   margin-bottom: 800px;
-   background-color: rgb(69, 148, 240);
-   color: #5fcae2;
-   font-size: 16px;
-   font-weight: 600;
-   transform:  transform 2.0s ease;
-   color: white;
-}
-
-</style>
 <body>
-    <h2>Entrou</h2>
-    <button onclick="window.location.href='index.php'">Lista de Usuarios</button>
-    <button class="bb" onclick="window.location.href='login.php'">Voltar Tela Login</button>
+    <section>
+        <div class="conteiner">
+        <h2>Listar Usuarios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <?php 
+                    if(!empty($dados))
+                    {
+                        foreach ($dados as $pessoa):
+                ?>
+                    <tr>
+                        <td><?php echo $pessoa['nome'];?></td>
+                        <td><?php echo $pessoa['email'];?></td>
+                        <td><?php echo $pessoa['telefone'];?></td>
+                        <td>
+                            <a href="editar.php?id=<?php echo $pessoa['id_usuario']; ?>"><button>Editar</button></a>
+                        </td>
+                        <td>
+                            <button class="excluir">Excluir</button>
+                        </td>
+                        
+                    </tr>
+                <?php endforeach;
+                    }
+                    else
+                    {
+                        echo "Nenhum usuário cadastrado";
+                    }
+                ?>
+            </table>
+        </div>          
+    </section>    
 </body>
 </html>

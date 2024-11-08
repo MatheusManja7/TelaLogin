@@ -69,5 +69,22 @@
                 return false;
             }
         }
+
+        public function listarUsuarios()
+        {
+            global $pdo;
+
+            $sqlListar = $pdo->prepare("SELECT * FROM usuario");
+            $sqlListar->execute();
+            if($sqlListar->rowCount()>0)
+            {
+                $dados = $sqlListar->fetchAll(PDO::FETCH_ASSOC);
+                return $dados;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 ?>

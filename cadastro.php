@@ -1,9 +1,3 @@
-<?php
-    require_once 'usuario.php';
-    $usuario = new Usuario();
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,11 +42,9 @@
                 </form>
             </div>
             <!-- <h2>Cadastro</h2> -->
-      
+        </div>
     </section>
     
-    </div>
-
     
 
     <?php
