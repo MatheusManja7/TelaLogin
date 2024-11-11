@@ -12,10 +12,11 @@
             try
             {
                 $pdo = new PDO("mysql:dbname=".$nome, $usuario,$senha);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             catch(PDOException $erro)
             {
-                $msgErro = $error->getMessager();
+                $this->$msgErro = $error->getMessager();
             }
         }
 
@@ -85,6 +86,14 @@
             {
                 return false;
             }
+        }
+
+        public function excluirUsuario($id)
+        {
+            global $pdo;
+            $sql = $pdo->prepare("DELETE FROM usuario WHERE id_usuario = :id");
+            $sql->bindValue(":id", $id);
+            $sql->execute();
         }
     }
 ?>

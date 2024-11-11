@@ -41,8 +41,9 @@
                             <a href="editar.php?id=<?php echo $pessoa['id_usuario']; ?>"><button>Editar</button></a>
                         </td>
                         <td>
-                            <button class="excluir">Excluir</button>
+                            <a href="delete.php?id=<?php echo $pessoa['id_usuario']; ?>"><button class="excluir">Excluir</button></a>
                         </td>
+
                         
                     </tr>
                 <?php endforeach;
